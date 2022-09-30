@@ -19,9 +19,6 @@ jobs:
           node-version: '16'
           cache: 'yarn'
 
-      - name: Build
-        uses: TartanLlama/actions-eleventy@master
-
       - name: Install dependencies & build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -32,6 +29,9 @@ jobs:
           # Prevent GitHub from trying to use Jekyll
           touch _site/.nojekyll
 
+      - name: Build
+        uses: TartanLlama/actions-eleventy@master
+          
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
