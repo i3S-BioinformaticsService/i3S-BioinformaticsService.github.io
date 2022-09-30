@@ -21,6 +21,7 @@ jobs:
       - name: Install dependencies & build
         run: |
           yarn
+          yarn sass
           yarn build
           # Prevent GitHub from trying to use Jekyll
           touch _site/.nojekyll
