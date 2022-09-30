@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - master
 
 jobs:
   build:
@@ -20,11 +19,8 @@ jobs:
           cache: 'yarn'
 
       - name: Install dependencies & build
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           yarn
-          yarn sass
           yarn build
           # Prevent GitHub from trying to use Jekyll
           touch _site/.nojekyll
