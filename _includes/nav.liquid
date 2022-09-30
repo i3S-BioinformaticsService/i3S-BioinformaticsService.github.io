@@ -1,0 +1,61 @@
+{% if page.url == '/' %}{% assign homepage = true %}{% endif %}
+
+<div class="">
+  <div class="container-lg d-flex flex-items-center flex-justify-between px-3">
+    <div class="py-3 d-inline-flex flex-items-center">
+      <div class="col-1" >
+        <a href="/">
+	<img src="/assets/img/i3s.jpg" class="width-fit" alt="i3S logo" />
+	</a>
+      </div>
+      <div class="text-inherit text-left">
+        <h1 class="h4 text-uppercase"> Bioinformatic Workflows </h1>
+      </div>       
+    </div>
+
+    <details class="dropdown details-reset details-overlay d-inline-block focus-within ">
+      <summary class="h1" aria-haspopup="true"> ≡ </summary>
+      <div class="dropdown-menu dropdown-menu-w">
+        {% assign navPages = collections.all | eleventyNavigation %}
+        {%- for entry in navPages %}
+        <li{% if entry.url == page.url %} class=""{% endif %}>
+          {%- if entry.children.length < 1 -%}
+          <a class="dropdown-item" href="{{ entry.url | url }}">{{ entry.title }}</a>
+	  {%- else -%}
+	  <details class="dropdown details-reset details-overlay">
+            <summary class="" aria-haspopup="true">
+ 	      <p class="dropdown-item" style="margin-bottom:0" > {{ entry.title }}</p>
+	    </summary>
+            <div class="dropdown-menu dropdown-menu-w px-3">
+	      {%- for child in entry.children %}
+	      <li{% if child.url == page.url %} class=""{% endif %}>
+                <a class="dropdown-item" href="{{ child.url | url }}">{{ child.title }}</a>
+	      </li>
+              {% endfor -%}
+	    </div>
+	  </details>
+          {%- endif -%}
+        </li>
+        {%- endfor %}
+      </div>
+    </details>
+
+<!---
+{% if page.url != '/' %}
+     <div class="text-right">
+         <nav class="text-bold">	
+	   <a class="text-inherit px-2 d-inline-block" href="/">
+           <img
+    	     alt=""	
+    	     src="/assets/img/Home.png"
+     	     onmouseover="mouseOver(this)"
+     	     class="block width-fit"
+      	     title="Home"
+           />
+           </a>	
+         </nav>
+       </div>
+    {% endif %}
+    -->
+  </div>
+</div>

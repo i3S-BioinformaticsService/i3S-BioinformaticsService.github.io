@@ -1,0 +1,61 @@
+---
+layout: default
+title: De novo sequencing
+---
+
+<div class="color-bg-tertiary-light">
+  <div class="container-lg d-flex flex-column justify-content-evenly pt-3 px-3">
+    <style> div {text-align: justify; text-justify: inter-word; } </style> 
+    
+    <h1 class="h2">Resequencing</h1>
+    <p class="f3">
+      In this page we list the set of algorithms currently implemented at the i3S bioinformatics platform. Selection of the alignment software will take in consideration the sequencing method employed, i.e. short or long read sequencing. The provided short-read alignment workflows have similar alignment efficiencies for local read mapping. For global read mapping, bowtie2 is recommended since BWA lacks this capability.  
+    </p>
+    
+    <div class="container-lg page-section pt-2">
+      <h1 class="h2">Available Workflows</h1>
+      <div class="container-lg page-section py-2">
+	<h2 class="h3">Short read alignment (&lt; 1000 bp)</h2>
+	<div class="d-md-flex flex-wrap gutter flex-auto">
+	  {% assign apps = collections.genomics %}
+	  {% for app in apps %}{% if 'alignment_short' == app.data.label %}
+	  {% include "genomic" app: app.data %}{% endif %}
+	  {% endfor %}
+	</div>
+	<h2 class="h3">Long read alignment (&gt; 1000 bp)</h2>
+	<div class="d-md-flex flex-wrap gutter flex-auto">
+	  {% assign apps = collections.genomics %}
+	  {% for app in apps %}{% if 'alignment_long' == app.data.label %}
+	  {% include "genomic" app: app.data %}{% endif %}
+	  {% endfor %}
+	</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container-lg d-flex flex-column justify-content-evenly px-3">
+    <h1 class="h2">Follow-up analysis</h1>
+    <div class="container-lg page-section py-2">
+      <h2 class="h3">Germline variant calling
+	<a href="/analysis/genomics/variant_detection/germline_variant_calling/">
+	  <img
+	    alt=""
+            src="/assets/img/analysis.png"
+            class="avatar avatar-1 mr-2 color-bg-transparent"
+	    style="box-shadow: none;"
+            />
+	</a>
+      </h2>
+       <h2 class="h3">Somatic variant calling
+	<a href="/analysis/genomics/variant_detection/somatic_variant_calling/">
+	  <img
+	    alt=""
+            src="/assets/img/analysis.png"
+            class="avatar avatar-1 mr-2 color-bg-transparent"
+	    style="box-shadow: none;"
+            />
+	</a>
+       </h2>
+    </div>
+  </div>
+</div>

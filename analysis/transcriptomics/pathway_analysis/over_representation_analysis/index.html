@@ -1,0 +1,39 @@
+---
+layout: default
+title: Over-representation analysis
+---
+
+<script> function mouseOver(x) {document.getElementById("legend").innerHTML = x.title;}</script>
+
+<div class="color-bg-tertiary-light">
+  <div class="container-lg text-center" >
+    <img
+      alt=""
+      src="/assets/img/Over_representation.png"
+      onmouseover="mouseOver(this)"
+      class="block width-fit"
+      title="Exploratory analysis"
+          />
+  </div>
+
+  <div class="container-lg d-flex flex-column justify-content-evenly py-3 px-3">
+    <style> div {text-align: justify; text-justify: inter-word; } </style> 
+    
+    <h1 class="h2">Over-representation analysis</h1>
+    <p class="f3">
+      Over-representation analysis is a statistical method that determines whether genes from pre-defined sets (i.e. GO term or KEGG pathway) are present more than would be expected (over-represented) in a subset of your data (i.e. typically genes differently expressed). In simple terms, for each pathway, your set of differentially expressed genes, that are part of that pathway, are counted. This step is repeated for all genes (except differentially expressed) measured in your analysis. Significance is then calculated using a hypergeometric distribution which corresponds to a one-sided version of Fisher’s exact test.
+    </p>
+
+  </div>
+  <div class="container-lg d-flex flex-column justify-content-evenly px-3 pt-4">
+    <h1 class="h2">Available pipelines</h1>
+    <div class="container-lg page-section py-2">
+      <div class="d-md-flex flex-wrap gutter flex-auto">
+	{% assign apps = collections.genomics %}
+	{% for app in apps %}{% if 'over_representation' == app.data.label %}
+	{% include "genomic" app: app.data %}{% endif %}
+	{% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

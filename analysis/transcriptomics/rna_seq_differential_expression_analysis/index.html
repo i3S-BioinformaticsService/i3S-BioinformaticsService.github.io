@@ -1,0 +1,220 @@
+---
+layout: default
+title: RNAseq-seq analysis
+
+eleventyNavigation:
+  key: RNA-seq analysis
+  parent: Transcriptomics
+  order: 2
+---
+
+<script> function mouseOver(x) {document.getElementById("legend").innerHTML = x.title;}</script>
+
+<div class="color-bg-tertiary-light">
+  <div class="container-lg text-center" >
+    <img
+      alt=""
+      src="/assets/img/rna_seq_differential_expression_analysis.png"
+      class="block width-fit"
+      title="Variant analysis"
+      />
+  </div>
+  
+  <div class="container-lg d-flex flex-column justify-content-evenly py-3 px-3">
+    <style> div {text-align: justify; text-justify: inter-word; } </style> 
+    
+    <h1 class="h2">RNA-seq analysis</h1>
+    <p class="f3">
+      RNA-seq is a powerfull technique for measuring gene expression and transcription activation at genome-wide level, allowing to assess changes in cell biology associated with a phenotypic observation (e.g. disease). Transcriptome analysis captures information on splicing events and post-transcriptional modiffication which occur during mRNA processing, not detected by DNA sequencing. Additionally, the primary output of RNA-seq, counts of reads, have a high degree of agreement with qRT-PCR, both at absolute and relative gene expression levels. Two transcriptome sequencing modalaties are available to researchers, polyadenylated (poly-A) mRNA (mRNA-seq) and whole transcriptome sequencing. Whole transcriptome sequencing gives the the most comprehensive view possible by sequencing all coding and non-coding RNA transcripts (lncRNA, circRNA and sRNA). This strategy requires depletion of ribosomal RNA (rRNA) before library construction, since they can make up between ~80 to 98% of all RNA molecules in a sample. Additionaly, for sequencing of sRNA, special technical considerations should be undertaken before sequencing. For eukaryotes, mRNA-seq provides a more cost-efficient solutions for RNA sequencing by enriching for RNAs with poly(A) tails, such as message RNAs (mRNAs). The benefit of this approach is that it targets the full length, mature protein coding poly-A transcripts alone.
+    </p>
+
+    <h1 class="h2 pt-4">Workflow</h1>
+    <div class="container-lg page-section pt-2">
+      <div class="container-lg d-flex flex-column flex-sm-row flex-sm-justify-between flex-sm-items-center py-3 px-3">
+	<div class="d-flex flex-self-center" style="flex-basis:10%">
+	  <h3 class="h3 text-center mb-auto">Step 1</h3>
+	</div>
+	
+	<div class="d-flex flex-column" style="flex-basis:90%" >
+	  <h2 class="h3">Quality control</h2>
+	  <p class="f3">
+	    The first step in any RNA-Seq workflow is to assess the quality of the sequenced reads. A first quality control (QC) step is recommended for the assessement of contaminations, bias and errors in raw sequences. By addressing these issues we can reduce the impact of these errors in downstream analysis.
+	  </p>
+	</div>
+      </div>
+      
+      <div class="container-lg d-flex flex-column flex-sm-row flex-sm-justify-between flex-sm-items-center py-3 px-3">
+	<div class="d-flex flex-self-center" style="flex-basis:10%">
+	  <h3 class="h3 text-center mb-auto">Step 2</h3>
+	</div>
+	
+	<div class="d-flex flex-column" style="flex-basis:90%" >
+	  <h2 class="h3">Read Alignment</h2>
+	  <p class="f3">
+	    In this step, reads are aligned to either the species reference genome or transcriptome using a splicing-aware aligner sofware.
+	  </p>
+	</div>
+      </div>
+
+            <div class="container-lg d-flex flex-column flex-sm-row flex-sm-justify-between flex-sm-items-center py-3 px-3">
+	<div class="d-flex flex-self-center" style="flex-basis:10%">
+	  <h3 class="h3 text-center mb-auto">Step 3</h3>
+	</div>
+	
+	<div class="d-flex flex-column" style="flex-basis:90%" >
+	  <h2 class="h3">Quantification of gene expression</h2>
+	  <p class="f3">
+	    After the alignment step, reads are assigned to a gene or a transcrip which is then used to estimate expression levels of that gene/transcript.
+	  </p>  
+	</div>
+      </div>
+      
+      <div class="container-lg d-flex flex-column flex-sm-row flex-sm-justify-between flex-sm-items-center py-3 px-3">
+	<div class="d-flex flex-self-center" style="flex-basis:10%">
+	  <h3 class="h3 text-center mb-auto">Step 4</h3>
+	</div>
+	
+	<div class="d-flex flex-column" style="flex-basis:90%" >
+	  <h2 class="h3">Quality assessment</h2>
+	  <p class="f3">
+	     In the last step, an additional quality control step assessing the percentage of reads mapped to the transcriptome versus unmapped will be conducted. This step can when detect contaminations on the extraction of library contruction steps which can impair the correct analysis of the data.
+	  </p>  
+	</div>
+      </div>
+    </div>
+    
+    <div class="container-lg d-flex flex-column justify-content-evenly px-3 pt-4">
+      <h1 class="h2">Available pipelines</h1>
+      <h2 class="h3 py-4">Recommended</h2>
+      <div class="container-lg page-section">
+	<div class="d-md-flex flex-wrap gutter flex-auto">
+	  {% assign apps = collections.transcriptomics %}
+	  {% for app in apps %}{% if 'rnaseq_align_recommended' == app.data.label %}
+	  {% include "transcriptomic" app: app.data %}{% endif %}
+	  {% endfor %}
+	</div>
+      </div>
+
+      <h2 class="h3">Additional pipelines</h2>
+      <div class="container-lg page-section py-2">
+	<div class="d-md-flex flex-wrap gutter flex-auto">
+	  {% assign apps = collections.transcriptomics %}
+	  {% for app in apps %}{% if 'rnaseq_align' == app.data.label %}
+	  {% include "transcriptomic" app: app.data %}{% endif %}
+	  {% endfor %}
+	</div>
+      </div>
+    </div>
+
+  
+    <h1 class="h2 pt-4">Follow-up analysis</h1>
+    <div class="container-lg page-section py-2">
+      <div class="d-md-flex flex-wrap gutter flex-auto">
+	<div class="d-flex flex-column" style="flex-basis:33.33%">
+	  <div class="d-flex flex-self-center anim-hover-grow" >
+	    <a href="/analysis/transcriptomics/visual_representations/principal_component_analysis/">
+	      <img
+		alt=""
+		src="/assets/img/PCA.png"
+		onmouseover="mouseOver(this)"
+		class="block width-fit"
+		title="Small variant analysis"
+		/>
+	    </a>
+	  </div>
+	  <div class="page-section d-flex flex-column mt-auto">
+	    <h3 class="h3 text-center mb-auto">Principal component analysis</h3>    
+	  </div>
+	</div>
+	
+	<div class="d-flex flex-column" style="flex-basis:33.33%">
+	  <div class="d-flex flex-self-center anim-hover-grow">
+	    <a href="/analysis/transcriptomics/visual_representations/heatmap/">
+	      <img
+		alt=""
+		src="/assets/img/Heatmap.png"
+		onmouseover="mouseOver(this)"
+		class="d-block width-fit"
+		title="Copy-number analysis"
+		/>
+	    </a>
+	  </div>
+	  
+	  <div class="page-section d-flex flex-column mt-auto">
+	    <h3 class="h3 text-center mb-auto">Heatmap analysis</h3>    
+	  </div>
+	</div>
+
+	<div class="d-flex flex-column" style="flex-basis:33.33%">
+	  <div class="d-flex flex-self-center anim-hover-grow">
+	    <a href="/analysis/transcriptomics/exploratory_analysis/differentia_expression_analysis/">
+	      <img
+		alt=""
+		src="/assets/img/allelicExpression.png"
+		onmouseover="mouseOver(this)"
+		class="d-block width-fit"
+		title="Copy-number analysis"
+		/>
+	    </a>
+	  </div>
+	  
+	  <div class="page-section d-flex flex-column mt-auto">
+	    <h3 class="h3 text-center mb-auto">Allelic expression analysis</h3>    
+	  </div>
+	</div>
+	
+	<div class="d-flex flex-column" style="flex-basis:33.33%">
+	  <div class="d-flex flex-self-center anim-hover-grow">
+	    <a href="/analysis/transcriptomics/exploratory_analysis/differentia_expression_analysis/">
+	      <img
+		alt=""
+		src="/assets/img/DEanalysis.png"
+		onmouseover="mouseOver(this)"
+		class="d-block width-fit"
+		title="Copy-number analysis"
+		/>
+	    </a>
+	  </div>
+	  
+	  <div class="page-section d-flex flex-column mt-auto">
+	    <h3 class="h3 text-center mb-auto">Differential expression analysis</h3>    
+	  </div>
+	</div>
+	
+ 	<div class="d-flex flex-column" style="flex-basis:33.33%">
+	  <div class="d-flex flex-self-center anim-hover-grow" >
+	    <a href="/analysis/transcriptomics/pathway_analysis/">
+	      <img
+		alt=""
+		src="/assets/img/pathwayAnalysis.png"
+		onmouseover="mouseOver(this)"
+		class="d-block width-fit"
+		title="Structural variant analysis"
+		/>
+	    </a>
+	  </div>
+	  <div class="page-section d-flex flex-column mt-auto">
+	    <h3 class="h3 text-center mb-auto">Pathway analysis</h3>
+	  </div>
+	</div>
+	
+	<div class="d-flex flex-column" style="flex-basis:33.33%">
+	  <div class="d-flex flex-self-center anim-hover-grow" >
+	    <a href="/analysis/transcriptomics/predictive_modeling/">
+	      <img
+		alt=""
+		src="/assets/img/predictiveModelling.png"
+		onmouseover="mouseOver(this)"
+		class="d-block width-fit"
+		title="Structural variant analysis"
+		/>
+	    </a>
+	  </div>
+	  <div class="page-section d-flex flex-column mt-auto">
+	    <h3 class="h3 text-center mb-auto">Predictive modeling</h3>
+	  </div>
+	</div>
+      </div>
+    </div>
+  </div>
+</div>

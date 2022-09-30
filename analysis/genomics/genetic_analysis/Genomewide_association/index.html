@@ -1,0 +1,39 @@
+---
+layout: default
+title: Small variant analysis
+---
+
+<script> function mouseOver(x) {document.getElementById("legend").innerHTML = x.title;}</script>
+
+<div class="color-bg-tertiary-light">
+  <div class="container-lg text-center" >
+    <img
+      alt=""
+      src="/assets/img/GenomeWideAssociation.png"
+      onmouseover="mouseOver(this)"
+      class="block width-fit"
+      title="Exploratory analysis"
+          />
+  </div>
+
+  <div class="container-lg d-flex flex-column justify-content-evenly py-3 px-3">
+    <style> div {text-align: justify; text-justify: inter-word; } </style> 
+    
+    <h1 class="h2">Genome-wide association analysis</h1>
+    <p class="f3">
+      A genome-wide association study (GWAS) is a genetic analysis aiming to map the poly-genetic architecture of a certain observable phenotypic trait. These studies take advantage of genetic variation in the form of Single Nucleotide Polymorphims (SNPs) to detect the present of variation at a significantly higher frequency in the phenotype of interest comparatively with a control population.     
+    </p>
+
+  </div>
+  <div class="container-lg d-flex flex-column justify-content-evenly px-3 pt-4">
+    <h1 class="h2">Available pipelines</h1>
+    <div class="container-lg page-section py-2">
+      <div class="d-md-flex flex-wrap gutter flex-auto">
+	{% assign apps = collections.genomics %}
+	{% for app in apps %}{% if 'variant_calling' == app.data.label %}
+	{% include "genomic" app: app.data %}{% endif %}
+	{% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

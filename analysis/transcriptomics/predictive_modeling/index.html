@@ -1,0 +1,48 @@
+---
+layout: default
+title: Variant analysis
+---
+
+<script> function mouseOver(x) {document.getElementById("legend").innerHTML = x.title;}</script>
+
+<div class="color-bg-tertiary-light">
+  <div class="container-lg text-center" >
+    <img
+      alt=""
+      src="/assets/img/predictiveModelling.png"
+      class="block width-fit"
+      title="Predictive Modelling"
+      />
+  </div>
+  
+  <div class="container-lg d-flex flex-column justify-content-evenly py-3 px-3">
+    <style> div {text-align: justify; text-justify: inter-word; } </style> 
+    
+    <h1 class="h2">Predictive Modelling</h1>
+    <p class="f3">
+      RNA-seq data are invariably associated with clinical outcomes of interest, such as disease status, response to treatment, disease sub-type, quantitative phenotypic traits or information on time to an event of interest (e.g. survival, complication, metastasis). Using modern statistical methods, we can identify (bio)signatures which can help to gain intuition into the molecular mechanisms of disease, identify drug targets, or design new diagnostic assays.
+    </p>
+  
+    <h1 class="h2 pt-4">Available analysis</h1>
+    <div class="container-lg page-section py-2">
+      <div class="d-md-flex flex-wrap gutter flex-auto">
+	<div class="d-flex flex-column" style="flex-basis:33.33%">
+	  <div class="d-flex flex-self-center anim-hover-grow" >
+	    <a href="/analysis/transcriptomics/visual_representations/principal_component_analysis/">
+	      <img
+		alt=""
+		src="/assets/img/SurvivalAnalysis.png"
+		onmouseover="mouseOver(this)"
+		class="block width-fit"
+		title="Small variant analysis"
+		/>
+	    </a>
+	  </div>
+	  <div class="page-section d-flex flex-column mt-auto">
+	    <h3 class="h3 text-center mb-auto">Survival analysis</h3>    
+	  </div>
+	</div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+---
+layout: default.liquid
+---
+
+<div class="container-sm py-3">
+  <div class="d-flex flex-items-center px-3" >
+    <h2 class="h4 flex-grow-1 ms-3 text-center">Workflows generated in collaboration with: </h2>
+    <div class="col-2 flex-shrink-0">
+      <img
+        alt=""
+        src="/assets/img/pegi3s.png"
+        class="width-fit"
+        />
+    </div>
+  </div>
+</div>
+
+<div class="container-lg d-flex flex-column justify-content-evenly py-3 px-3">
+  <style> div {	text-align: justify; text-justify: inter-word; } </style>
+  <h2 class="h3">About this page:</h2>
+  <p class="lead text-justify">
+    This website aims to provide the bioinformatic workflows currently in use at the
+    i3S bioinformatics service. For reproducibility purposes all workflows are based
+    on docker images and linked between tools using the common workflow language (CWL). Please click on the image containing the analysis you want to perform for more information. For custom analyis, please contact the i3S bioinformatics service.
+  </p>
+</div>
+
+<div class="container-lg px-3">
+  <h2 class="h1 text-center">Analysis of next generation sequencing data</h2>
+</div>
+
+
+<div class="container-md px-6 pt-3 pb-6">
+  <div class="page-section d-flex flex-column gutter-md flex-md-row align-items-end mb-2" >
+    <div class="box-decoration d-flex flex-column col-auto anim-hover-grow">
+      <a href="/analysis/genomics/">
+	<img
+	  alt=""
+	  src="/assets/img/DNAsequencing.png"
+          class="d-block width-fit"
+          />
+      </a>
+      <div class="page-section d-flex flex-column mt-auto">
+	<h3 class="h3 text-center mb-auto">Genomic analysis</h3>    
+      </div>
+    </div>
+    
+    <div class="box-decoration d-flex flex-column col-auto mt-4 anim-hover-grow">
+      <a href="/analysis/transcriptomics/">
+	<img
+          alt=""
+	  src="/assets/img/RNAsequencing.png"
+          class="d-block width-fit"
+          />
+      </a>
+      <div class="page-section d-flex flex-column mt-auto">
+	<h3 class="h3 text-center mb-auto">Transcriptomic analysis</h3>
+      </div>
+    </div>
+  </div>
+</div>

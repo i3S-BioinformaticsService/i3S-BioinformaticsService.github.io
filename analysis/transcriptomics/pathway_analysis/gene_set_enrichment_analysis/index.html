@@ -1,0 +1,41 @@
+---
+layout: default
+title: Gene set enrichment analysis
+---
+
+<script> function mouseOver(x) {document.getElementById("legend").innerHTML = x.title;}</script>
+
+<div class="color-bg-tertiary-light">
+  <div class="container-lg text-center" >
+    <img
+      alt=""
+      src="/assets/img/Geneset_enrichment.png"
+      onmouseover="mouseOver(this)"
+      class="block width-fit"
+      title="Exploratory analysis"
+          />
+  </div>
+
+  <div class="container-lg d-flex flex-column justify-content-evenly py-3 px-3">
+    <style> div {text-align: justify; text-justify: inter-word; } </style> 
+    
+    <h1 class="h2">Gene set enrichment analysis</h1>
+    <p class="f3">
+      The principle of gene set enrichment analysis is that although large changes in individual genes can have significant effects on pathways, weaker but coordinated changes of genes on the same pathway can also have a significant effect. In gene set enrichment analysis, a gene ranking is first computed for all genes of a experiment setup (e.g cases versus controls). All gene ranking values in a given pathway are then aggregated into a pathway enrichment score. This score is influenced by the proportion of differentially expressed genes in a pathway, the size of the pathway, and the amount of correlation between genes in the pathway. Statistical significance is computed by permutation of the class label (i.e. phenotype) which preserves gene-gene correlations providing a more accurate null model.
+    </p>
+
+    </div>
+    
+    <div class="container-lg d-flex flex-column justify-content-evenly px-3 pt-4">
+      <h1 class="h2">Available pipelines</h1>
+      <div class="container-lg page-section py-2">
+	<div class="d-md-flex flex-wrap gutter flex-auto">
+	  {% assign apps = collections.genomics %}
+	  {% for app in apps %}{% if 'geneset_enrichment' == app.data.label %}
+	  {% include "genomic" app: app.data %}{% endif %}
+	  {% endfor %}
+	</div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+---
+layout: default
+title: Gene set enrichment analysis
+---
+
+<script> function mouseOver(x) {document.getElementById("legend").innerHTML = x.title;}</script>
+
+<div class="color-bg-tertiary-light">
+  <div class="container-lg text-center" >
+    <img
+      alt=""
+      src="/assets/img/regulatory_pathways.png"
+      onmouseover="mouseOver(this)"
+      class="block width-fit"
+      title="Regulatory pathway analysis"
+          />
+  </div>
+
+  <div class="container-lg d-flex flex-column justify-content-evenly py-3 px-3">
+    <style> div {text-align: justify; text-justify: inter-word; } </style> 
+    
+    <h1 class="h2">Regulatory pathway analysis</h1>
+    <p class="f3">
+      Although over-representation and gene-set enrichment analysis contribute with valuable information on up or down-regulated pathways, these approaches ignore the additional topology information from knowledge bases. Topology information can include interactions of gene products with each other in a given pathway, how they interact (e.g., activation, inhibition, etc.) and where they interact (e.g., cytoplasm, nucleus, etc.). Deciphering these interactions can thus lead to deeper insights into biological processed and their regulation. In regulatory pathway analysis both transcriptional factors, detected by gene set enrichment analysis, and differential expressed genes are used to uncover genes that interact with both in order to find the hidden layer of regulation, annotated on mode of regulation (activation vs. repression). Statistical significance of the regulation score is calculated using a permutation (generalized hyper-geometric) test.
+    </p>
+
+    </div>
+    
+    <div class="container-lg d-flex flex-column justify-content-evenly px-3 pt-4">
+      <h1 class="h2">Available pipelines</h1>
+      <div class="container-lg page-section py-2">
+	<div class="d-md-flex flex-wrap gutter flex-auto">
+	  {% assign apps = collections.genomics %}
+	  {% for app in apps %}{% if 'geneset_enrichment' == app.data.label %}
+	  {% include "genomic" app: app.data %}{% endif %}
+	  {% endfor %}
+	</div>
+      </div>
+    </div>
+  </div>
+</div>

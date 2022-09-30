@@ -1,0 +1,70 @@
+---
+layout: default
+title: Variant analysis
+
+eleventyNavigation:
+  key: Metagenomics
+  parent: Genomics
+  order: 3
+---
+
+<script> function mouseOver(x) {document.getElementById("legend").innerHTML = x.title;}</script>
+
+<div class="color-bg-tertiary-light">
+   <div class="container-lg text-center" >
+    <img
+      alt=""
+      src="/assets/img/metagenomics_v2.png"
+      class="block width-fit"
+      title="Variant analysis"
+      />
+  </div>
+  
+  <div class="container-lg d-flex flex-column justify-content-evenly py-3 px-3">
+    <style> div {text-align: justify; text-justify: inter-word; } </style> 
+    
+    <h1 class="h2">Metagenomics analysis</h1>
+    <p class="f3">
+      Metagenomics is defined as the study of all microbiota genetic content within a sample. The term metagenomics still carries ambiguity since it can refer to both marker gene sequencing and whole-genome metagenomics. It has been recommended the usage of the term "Metataxonomics" to marker gene sequencing and metagenomics to the random "shotgun" sequencing of microbial DNA, without selecting any particular gene. Both metataxonomics and metagenomics can provide information on the species composition of a microbiome.
+    </p>
+  
+  <h1 class="h2 pt-4">Available analysis</h1>
+  <div class="container-lg pt-4">
+    <div class="page-section d-flex flex-column gutter-md flex-md-row align-items-center mb-3" >
+      <div class="d-flex flex-column" style="flex-basis:50%">
+	<div class="d-flex flex-self-center anim-hover-grow" >
+	  <a href="/analysis/genomics/metagenomic_analysis/amplicon_16s/">
+	    <img
+	      alt=""
+	      src="/assets/img/16s_v2.png"
+	      onmouseover="mouseOver(this)"
+	      class="block width-fit"
+	      title="Small variant analysis"
+	      />
+	  </a>
+	</div>
+	<div class="page-section d-flex flex-column mt-auto">
+	  <h3 class="h3 text-center mb-auto">Metagenome through marker gene sequencing</h3>    
+	</div>
+      </div>
+      
+      <div class="d-flex flex-column col-auto" style="flex-basis:50%">
+	<div class="d-flex flex-self-center anim-hover-grow">
+	  <a href="/analysis/genomics/metagenomic_analysis/whole_metagenome">
+	    <img
+	      alt=""
+	      src="/assets/img/metagenomesequencing.png"
+	      onmouseover="mouseOver(this)"
+	      class="d-block width-fit"
+	      title="Copy-number analysis"
+	      />
+	  </a>
+	</div>
+	
+	<div class="page-section d-flex flex-column mt-auto">
+	  <h3 class="h3 text-center mb-auto">Whole-metagenome</h3>    
+	</div>
+      </div>
+    </div>
+  </div>
+  </div>

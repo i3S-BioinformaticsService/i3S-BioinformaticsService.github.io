@@ -1,0 +1,38 @@
+---
+layout: default
+title: Variant analysis
+---
+
+<script> function mouseOver(x) {document.getElementById("legend").innerHTML = x.title;}</script>
+
+<div class="color-bg-tertiary-light">
+  <div class="container-lg text-center" >
+    <img
+      alt=""
+      src="/assets/img/TrajectoryAnalysis.png"
+      class="block width-fit"
+      title="Variant analysis"
+      />
+  </div>
+  
+  <div class="container-lg d-flex flex-column justify-content-evenly py-3 px-3">
+    <style> div {text-align: justify; text-justify: inter-word; } </style> 
+    
+    <h1 class="h2">Trajectory analysis</h1>
+    <p class="f3">
+      Traditional clustering methods that assign cells to a group are not the most appropriate tools for datasets representing developemental processes or derived from a time-course experiments, where is more appropriate to view cells as a continuum. Continous trajectory analysis are often refered as "pseudotime" and require external information (e.g. sampling time from a time-course experiment or marker genes for developmental trajectories) since they cannot determine the direction or speed of cells allong the trajectory. Most tools for trajectory analysis take one of two approaches: 1) a low-dimensional manifold or 2) unsupervised clustering. Cluster-based pseudotime methods tend to be more accurate for the cases where there is an unequal density of cells (i.e. more cells from one state than the other) and large scale developmental hierarchies. Manifold approaches work best under even sampling across transitions and when examining details of singular transitions. Newer methodolies can infer time dynamics based on the relative abundaces of exonic and intronic reads, which enable the inference of the direction and estimate the rate of chance that each cell is moving in the expression space. This approach is however limited by sequencing depth and the number of reads mapped to introns.
+    </p>
+  
+    <div class="container-lg d-flex flex-column justify-content-evenly pt-4">
+      <h1 class="h2">Available pipelines</h1>
+      <div class="container-lg page-section py-2">
+	<div class="d-md-flex flex-wrap gutter flex-auto">
+	  {% assign apps = collections.genomics %}
+	  {% for app in apps %}{% if 'dna_read_assembly' == app.data.label %}
+	  {% include "genomic" app: app.data %}{% endif %}
+	  {% endfor %}
+	</div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,155 @@
+---
+layout: default
+title: Exploratory analysis
+
+eleventyNavigation:
+  key: Exploratory gene expression analysis
+  parent: Transcriptomics
+  order: 1
+---
+
+<script> function mouseOver(x) {document.getElementById("legend").innerHTML = x.title;}</script>
+
+<div class="color-bg-tertiary-light">
+  <div class="container-lg text-center" >
+    <img
+      alt=""
+      src="/assets/img/rna_seq_exploratory_analysis.png"
+      class="block width-fit"
+      title="Variant analysis"
+      />
+  </div>
+  
+  <div class="container-lg d-flex flex-column justify-content-evenly py-3 px-3">
+    <style> div {text-align: justify; text-justify: inter-word; } </style> 
+    
+    <h1 class="h2">Exploratory gene expression analysis</h1>
+    <p class="f3">
+      Given the increased availability of data resources from large scale sequencing consortia, an efficient exploratory analysis could provide a tremendous research opportunity. This exploration can help generate novel hypothesis for experimentation, validate observations seen on smaller cohorts, and help improve fundamental understanding of genes and their roles in complex biological networks. In this page we will collect a list of public sequencing consortia where RNAseq data, raw and/or processed is available. Additionally, a set of analysis that can be performed on this datasets can be found below. If you want to perform a exploratory analysis using a public RNAseq database not stated below or want a specific analysis, please contact the i3S bioinformatic service.
+    </p>
+  
+    <h1 class="h2 pt-4">Available databases</h1>
+    <div class="container-lg pt-4">
+      <div class="page-section d-flex flex-column flex-md-row gutter flex-items-center flex-md-items-center" >
+	<div class="col-md-6 hide-md">
+          <img
+            alt=""
+            src="/assets/img/tcga.png"
+            class="d-block width-fit"
+            />
+	</div>
+	<div class="col-md-auto">
+          <p class="f3">
+            The Cancer Genome Atlas (TCGA) is a landmark cancer genomics program that molecularly characterized over 20000 primary cancer and matched normal samples spanning 33 cancer types.
+          </p>
+	</div>
+      </div>
+      
+      <div class="page-section d-flex flex-column flex-md-row gutter flex-items-center flex-md-items-center py-5" >
+	<div class="col-md-6 hide-md">
+          <img
+            alt=""
+            src="/assets/img/gtex.png"
+            class="d-block width-fit"
+            />
+	</div>
+	<div class="col-md-auto">
+          <p class="f3">
+            The GTEx project has created a reference resource of gene expression levels from ‘normal’, non-diseased tissues. Currently, the project has analysed over 17000 samples from 54 different tissues from a total of 948 donors.
+          </p>
+	</div>
+      </div>
+    </div>
+    <h1 class="h2 pt-4">Available analysis</h1>
+    <div class="container-lg page-section py-2">
+      <div class="d-md-flex flex-wrap gutter flex-auto">
+	<div class="d-flex flex-column" style="flex-basis:33.33%">
+	  <div class="d-flex flex-self-center anim-hover-grow" >
+	    <a href="/analysis/transcriptomics/visual_representations/principal_component_analysis/">
+	      <img
+		alt=""
+		src="/assets/img/PCA.png"
+		onmouseover="mouseOver(this)"
+		class="block width-fit"
+		title="Small variant analysis"
+		/>
+	    </a>
+	  </div>
+	  <div class="page-section d-flex flex-column mt-auto">
+	    <h3 class="h3 text-center mb-auto">Principal component analysis</h3>    
+	  </div>
+	</div>
+	
+	<div class="d-flex flex-column" style="flex-basis:33.33%">
+	  <div class="d-flex flex-self-center anim-hover-grow">
+	    <a href="/analysis/transcriptomics/visual_representations/heatmap/">
+	      <img
+		alt=""
+		src="/assets/img/Heatmap.png"
+		onmouseover="mouseOver(this)"
+		class="d-block width-fit"
+		title="Copy-number analysis"
+		/>
+	    </a>
+	  </div>
+	  
+	  <div class="page-section d-flex flex-column mt-auto">
+	    <h3 class="h3 text-center mb-auto">Heatmap analysis</h3>    
+	  </div>
+	</div>
+	
+	<div class="d-flex flex-column" style="flex-basis:33.33%">
+	  <div class="d-flex flex-self-center anim-hover-grow">
+	    <a href="/analysis/transcriptomics/exploratory_analysis/differentia_expression_analysis/">
+	      <img
+		alt=""
+		src="/assets/img/DEanalysis.png"
+		onmouseover="mouseOver(this)"
+		class="d-block width-fit"
+		title="Copy-number analysis"
+		/>
+	    </a>
+	  </div>
+	  
+	  <div class="page-section d-flex flex-column mt-auto">
+	    <h3 class="h3 text-center mb-auto">Differential expression analysis</h3>    
+	  </div>
+	</div>
+	
+ 	<div class="d-flex flex-column" style="flex-basis:33.33%">
+	  <div class="d-flex flex-self-center anim-hover-grow" >
+	    <a href="/analysis/transcriptomics/pathway_analysis/">
+	      <img
+		alt=""
+		src="/assets/img/pathwayAnalysis.png"
+		onmouseover="mouseOver(this)"
+		class="d-block width-fit"
+		title="Structural variant analysis"
+		/>
+	    </a>
+	  </div>
+	  <div class="page-section d-flex flex-column mt-auto">
+	    <h3 class="h3 text-center mb-auto">Pathway analysis</h3>
+	  </div>
+	</div>
+	
+	<div class="d-flex flex-column" style="flex-basis:33.33%">
+	  <div class="d-flex flex-self-center anim-hover-grow" >
+	    <a href="/analysis/transcriptomics/predictive_modeling/">
+	      <img
+		alt=""
+		src="/assets/img/predictiveModelling.png"
+		onmouseover="mouseOver(this)"
+		class="d-block width-fit"
+		title="Structural variant analysis"
+		/>
+	    </a>
+	  </div>
+	  <div class="page-section d-flex flex-column mt-auto">
+	    <h3 class="h3 text-center mb-auto">Predictive modeling</h3>
+	  </div>
+	</div>
+      </div>
+    </div>
+  </div>
+</div>

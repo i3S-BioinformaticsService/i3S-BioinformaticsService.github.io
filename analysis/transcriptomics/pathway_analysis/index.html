@@ -1,0 +1,106 @@
+---
+layout: default
+title: Pathway analysis
+
+eleventyNavigation:
+  key: Pathway analysis
+  parent: Transcriptomics
+  order: 3
+---
+
+<script> function mouseOver(x) {document.getElementById("legend").innerHTML = x.title;}</script>
+
+<div class="color-bg-tertiary-light">
+  <div class="container-lg text-center" >
+    <img
+      alt=""
+      src="/assets/img/pathwayAnalysis.png"
+      class="block width-fit"
+      title="Variant analysis"
+      />
+  </div>
+  
+  <div class="container-lg d-flex flex-column justify-content-evenly py-3 px-3">
+    <style> div {text-align: justify; text-justify: inter-word; } </style> 
+    
+    <h1 class="h2 pt-4">Pathway enrichment analysis</h1>
+    <p class="f3">
+      It can be refered as pathway analysis any set of techniques that use predetermined sets of genes (i.e, GO Terms, Kegg pathways) to interpret high-throughput data. The rational for performing pathways analysis is that pathway level information may be more biological meaninfull and more easily interpretable than the information provided by individual genes. Additionaly, enriched pathways can be uncovered from a collection of genes with relatively small changes in expression which can go undetected in differential gene expression analysis. 
+    </p>
+	
+    <h1 class="h2 pt-4">Available analysis</h1>
+    <div class="container-lg page-section py-2">
+      <div class="d-md-flex flex-wrap gutter flex-auto">
+	<div class="d-flex flex-column" style="flex-basis:33.33%">
+	  <div class="d-flex flex-self-center anim-hover-grow" >
+	    <a href="/analysis/transcriptomics/pathway_analysis/over_representation_analysis/">
+	      <img
+		alt=""
+		src="/assets/img/Over_representation.png"
+		onmouseover="mouseOver(this)"
+		class="block width-fit"
+		title="Small variant analysis"
+		/>
+	    </a>
+	  </div>
+	  <div class="page-section d-flex flex-column mt-auto">
+	    <h3 class="h3 text-center mb-auto">Over-representation analysis</h3>    
+	  </div>
+	</div>
+	
+	<div class="d-flex flex-column" style="flex-basis:33.33%">
+	  <div class="d-flex flex-self-center anim-hover-grow">
+	    <a href="/analysis/transcriptomics/pathway_analysis/gene_set_enrichment_analysis/">
+	      <img
+		alt=""
+		src="/assets/img/Geneset_enrichment.png"
+		onmouseover="mouseOver(this)"
+		class="d-block width-fit"
+		title="Copy-number analysis"
+		/>
+	    </a>
+	  </div>
+	  
+	  <div class="page-section d-flex flex-column mt-auto">
+	    <h3 class="h3 text-center mb-auto">Gene set enrichment analysis</h3>    
+	  </div>
+	</div>
+	
+	<div class="d-flex flex-column" style="flex-basis:33.33%">
+	  <div class="d-flex flex-self-center anim-hover-grow">
+	    <a href="/analysis/transcriptomics/pathway_analysis/regulatory_pathway_analysis/">
+	      <img
+		alt=""
+		src="/assets/img/regulatory_pathways.png"
+		onmouseover="mouseOver(this)"
+		class="d-block width-fit"
+		title="Copy-number analysis"
+		/>
+	    </a>
+	  </div>
+	  
+	  <div class="page-section d-flex flex-column mt-auto">
+	    <h3 class="h3 text-center mb-auto">Regulatory pathway analysis</h3>    
+	  </div>
+	</div>
+	
+	<div class="d-flex flex-column" style="flex-basis:33.33%">
+	  <div class="d-flex flex-self-center anim-hover-grow" >
+	    <a href="/analysis/transcriptomics/pathway_analysis/upstream_regulatory_analysis/">
+	      <img
+		alt=""
+		src="/assets/img/upstream_regulatory_pathways.png"
+		onmouseover="mouseOver(this)"
+		class="d-block width-fit"
+		title="Structural variant analysis"
+		/>
+	    </a>
+	  </div>
+	  <div class="page-section d-flex flex-column mt-auto">
+	    <h3 class="h3 text-center mb-auto">Upstream regulatory analysis</h3>
+	  </div>
+	</div>
+      </div>
+    </div>
+  </div>
+</div>

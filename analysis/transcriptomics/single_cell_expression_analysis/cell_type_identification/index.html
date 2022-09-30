@@ -1,0 +1,38 @@
+---
+layout: default
+title: Variant analysis
+---
+
+<script> function mouseOver(x) {document.getElementById("legend").innerHTML = x.title;}</script>
+
+<div class="color-bg-tertiary-light">
+  <div class="container-lg text-center" >
+    <img
+      alt=""
+      src="/assets/img/cellTypeIdentification.png"
+      class="block width-fit"
+      title="Variant analysis"
+      />
+  </div>
+  
+  <div class="container-lg d-flex flex-column justify-content-evenly py-3 px-3">
+    <style> div {text-align: justify; text-justify: inter-word; } </style> 
+    
+    <h1 class="h2">Cell type identification</h1>
+    <p class="f3">
+      A key step in any scRNA-seq is the annotation of cell clusters with biological meaningful cell types. This process traditionally involves an automatic clustering step followed by annotation of individual cells or cell clusters using a set of marker genes specifically expressed in a known cell type of use existing annotated single-cell maps as reference. Although, the clustering an annotation step can be performed in an automated fashion, often a manual curation step is required for lower confidence and conflicting or absent cell labels. This manual curation step, when required, will be left to the user.
+    </p>
+  
+    <div class="container-lg d-flex flex-column justify-content-evenly pt-4">
+      <h1 class="h2">Available pipelines</h1>
+      <div class="container-lg page-section py-2">
+	<div class="d-md-flex flex-wrap gutter flex-auto">
+	  {% assign apps = collections.genomics %}
+	  {% for app in apps %}{% if 'dna_read_assembly' == app.data.label %}
+	  {% include "genomic" app: app.data %}{% endif %}
+	  {% endfor %}
+	</div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+---
+layout: default
+title: Small variant analysis
+---
+
+<script> function mouseOver(x) {document.getElementById("legend").innerHTML = x.title;}</script>
+
+<div class="color-bg-tertiary-light">
+  <div class="container-lg text-center" >
+    <img
+      alt=""
+      src="/assets/img/Heatmap.png"
+      onmouseover="mouseOver(this)"
+      class="block width-fit"
+      title="Exploratory analysis"
+          />
+  </div>
+
+  <div class="container-lg d-flex flex-column justify-content-evenly py-3 px-3">
+    <style> div {text-align: justify; text-justify: inter-word; } </style> 
+    
+    <h1 class="h2">Heatmap and clustering</h1>
+    <p class="f3">
+      A common method of visualising gene expression data is to display it as a heatmap which can be particularly usefull to identify commnonly regulated genes or biological signatures associated with a particular condition. Heatmaps can be combined with clustering methods which group genes and/or samples based on similar gene expression patterns. Alterations in gene expression are displayed by alterations of colour and/or intensity. 
+    </p>
+  
+    <div class="container-lg d-flex flex-column justify-content-evenly pt-4">
+      <h1 class="h2">Available pipelines</h1>
+      <div class="container-lg page-section py-2">
+	<div class="d-md-flex flex-wrap gutter flex-auto">
+	  {% assign apps = collections.transcriptomics %}
+	  {% for app in apps %}{% if 'principal_component' == app.data.label %}
+	  {% include "genomic" app: app.data %}{% endif %}
+	  {% endfor %}
+	</div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+---
+pagination:
+  data: collections.transcriptomics
+  size: 1
+  alias : transcriptomic
+permalink: "/analysis/transcriptomics/{{ transcriptomic.data.slug | slug }}/index.html"
+layout: transcriptomic.liquid
+---
+
+{%- for item in pagination.items %}
+  {{ item.data }}
+{% endfor -%}

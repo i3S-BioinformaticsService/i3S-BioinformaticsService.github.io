@@ -1,0 +1,12 @@
+---
+pagination:
+  data: collections.genomics
+  size: 1
+  alias: genomic
+permalink: "/analysis/genomics/{{ genomic.data.slug | slug }}/index.html"
+layout: genomic.liquid
+---
+
+{%- for item in pagination.items %}
+  {{ item.data }}
+{% endfor -%}

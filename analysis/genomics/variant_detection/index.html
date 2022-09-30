@@ -1,0 +1,142 @@
+---
+layout: default
+title: Variant analysis
+
+eleventyNavigation:
+  key: Variant analysis
+  parent: Genomics
+  order: 2
+---
+
+<script> function mouseOver(x) {document.getElementById("legend").innerHTML = x.title;}</script>
+
+<div class="color-bg-tertiary-light">
+  <div class="container-md" style="flex-basis:66.66%" >
+    <img
+      alt=""
+      src="/assets/img/mutation_calling.png"
+      class="block width-fit"
+      title="Variant analysis"
+      />
+  </div>
+  
+  <div class="container-lg d-flex flex-column justify-content-evenly py-3 px-3">
+    <style> div {text-align: justify; text-justify: inter-word; } </style> 
+    
+    <h1 class="h2">Variant analysis</h1>
+    <p class="f3">
+      In general, the goal of the majority of DNA sequencing projects is to discover genomic differences (variants) either between healthy and diseased tissues, between individuals of a population, or between strains of an organism. These variations can provide mechanistic insight into disease processes and the function of affected genes. These variants can take the form of single nucleotide variants (SNVs), small DNA insertions or deletions (indels), copy number variations (CNVs), or other structural variants (SVs). Identification of these variants is usually achieved by resequencing strategies where variations are identified by the precise alignment of sequenced reads to a reference genome. Resequencing strategies can range from whole-genome, whole-exome and target sequencing. With the exception of array genotyping, all next generation sequences follow the broad workflow description stated below.
+    </p>
+
+    <h1 class="h2 pt-4">Workflow</h1>
+    <div class="container-lg page-section pt-2">
+      <div class="container-lg d-flex flex-column flex-sm-row flex-sm-justify-between flex-sm-items-center py-3 px-3">
+	<div class="d-flex flex-self-center" style="flex-basis:10%">
+	  <h3 class="h3 text-center mb-auto">Step 1</h3>
+	</div>
+	
+	<div class="d-flex flex-column" style="flex-basis:90%" >
+	  <h2 class="h3">Quality control</h2>
+	  <p class="f3">
+	    Raw sequence data obtained from a sequencing service provider, in general, is not immediately ready for variant discovery. A first quality control (QC) step is recommended for the assessement of contaminations, bias and errors in raw sequences. By addressing these issues we can reduce the impact of these errors in downstream analysis.  
+	  </p>
+	</div>
+      </div>
+      
+      <div class="container-lg d-flex flex-column flex-sm-row flex-sm-justify-between flex-sm-items-center py-3 px-3">
+	<div class="d-flex flex-self-center" style="flex-basis:10%">
+	  <h3 class="h3 text-center mb-auto">Step 2</h3>
+	</div>
+	
+	<div class="d-flex flex-column" style="flex-basis:90%" >
+	  <h2 class="h3">Sequence alignment</h2>
+	  <p class="f3">
+	    In this step, reads are aligned to a reference genome to determine its precise location.
+	  </p>
+	</div>
+      </div>
+      
+      <div class="container-lg d-flex flex-column flex-sm-row flex-sm-justify-between flex-sm-items-center py-3 px-3">
+	<div class="d-flex flex-self-center" style="flex-basis:10%">
+	  <h3 class="h3 text-center mb-auto">Step 3</h3>
+	</div>
+	
+	<div class="d-flex flex-column" style="flex-basis:90%" >
+	  <h2 class="h3">Post-alignment processing</h2>
+	  <p class="f3">
+	    After the alignment step, technical biases from the underlying sequencing platform and or sample preparation steps can still linger which affect variant calling. Two of the most common sources of biases are duplicates (PCR duplicates and optical duplicates) and uneven base quality scores between sequencing cycles. By identifying duplicates and recalibrating base quality scores we can reduce the impact of these sources of bias from the analysis. Base quality score recalibration can only be performed in organisms with public variation data (VCF) which typically are model-organisms. For the remaining organisms, this step will not be performed. 
+	  </p>
+	</div>
+      </div>
+    </div>
+
+    <div class="container-lg d-flex flex-column justify-content-evenly pt-4">
+      <h1 class="h2">Available pipelines</h1>
+      <div class="container-lg page-section py-2">
+	<div class="d-md-flex flex-wrap gutter flex-auto">
+	  {% assign apps = collections.genomics %}
+	  {% for app in apps %}{% if 'dna_resequencing' == app.data.label %}
+	  {% include "genomic" app: app.data %}{% endif %}
+	  {% endfor %}
+	</div>
+      </div>
+    </div>
+    
+    <h1 class="h2 pt-4">Follow-up analysis</h1>
+    <div class="container-lg pt-4">
+      <div class="page-section d-flex flex-column gutter-md flex-md-row align-items-center mb-3" >
+	<div class="d-flex flex-column" style="flex-basis:33.33%">
+	  <div class="d-flex flex-self-center anim-hover-grow" >
+	    <a href="/analysis/genomics/variant_detection/small_variants/">
+	      <img
+		alt=""
+		src="/assets/img/smallVariants.png"
+		onmouseover="mouseOver(this)"
+		class="block width-fit"
+		title="Small variant analysis"
+		/>
+	    </a>
+	  </div>
+	  <div class="page-section d-flex flex-column mt-auto">
+	    <h3 class="h3 text-center mb-auto">Small variant analysis</h3>    
+	  </div>
+	</div>
+	
+	<div class="d-flex flex-column col-auto" style="flex-basis:33.33%">
+	  <div class="d-flex flex-self-center anim-hover-grow">
+	    <a href="/analysis/genomics/variant_detection/copy_number/">
+	      <img
+		alt=""
+		src="/assets/img/copynumber.png"
+		onmouseover="mouseOver(this)"
+		class="d-block width-fit"
+		title="Copy-number analysis"
+		/>
+	    </a>
+	  </div>
+	  
+	  <div class="page-section d-flex flex-column mt-auto">
+	    <h3 class="h3 text-center mb-auto">Copy number variants</h3>    
+	  </div>
+	</div>
+	
+	<div class="d-flex flex-column col-auto" style="flex-basis:33.33%">
+	  <div class="d-flex flex-self-center anim-hover-grow" >
+	    <a href="/analysis/genomics/variant_detection/structural_variants/">
+	      <img
+		alt=""
+		src="/assets/img/structuralVariants.png"
+		onmouseover="mouseOver(this)"
+		class="d-block width-fit"
+		title="Structural variant analysis"
+		/>
+	    </a>
+	  </div>
+	  <div class="page-section d-flex flex-column mt-auto">
+	    <h3 class="h3 text-center mb-auto">Structural variants</h3>
+	  </div>
+	</div>
+      </div>
+    </div>
+  </div>
+</div>

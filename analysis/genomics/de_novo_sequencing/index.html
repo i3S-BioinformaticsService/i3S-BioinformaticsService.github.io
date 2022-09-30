@@ -1,0 +1,79 @@
+---
+layout: default
+title: De novo sequencing
+---
+
+<div class="color-bg-tertiary-light">
+  <div class="container-lg d-flex flex-column justify-content-evenly py-3 px-3">
+    <style> div {text-align: justify; text-justify: inter-word; } </style> 
+    
+    <h1 class="h2">De Novo Sequencing analysis</h1>
+    <p class="f3">
+      In this page we list the set of algorithms currently implemented at the i3S bioinformatics platform. Due to the high variablility between de novo assemblers, a conjugation of the following workflows is recommended in order to optimize contig length (e.g. N50), genome coverage and maximum, median and average contig size. 
+    </p>
+    
+    <div class="container-lg page-section pt-2">
+      <h1 class="h2">Available Workflows</h1>
+      <div class="container-lg page-section py-2">
+	<h2 class="h3">Short read assembly (&lt; 1000 bp)</h2>
+	<div class="d-md-flex flex-wrap gutter flex-auto">
+	  {% assign apps = collections.genomics %}
+	  {% for app in apps %}{% if 'denovoassembly_short' == app.data.label %}
+	  {% include "genomic" app: app.data %}{% endif %}
+	  {% endfor %}
+	</div>
+	<h2 class="h3">Long read assembly (&gt; 1000 bp)</h2>
+	<div class="d-md-flex flex-wrap gutter flex-auto">
+	  {% assign apps = collections.genomics %}
+	  {% for app in apps %}{% if 'denovoassembly_long' == app.data.label %}
+	  {% include "genomic" app: app.data %}{% endif %}
+	  {% endfor %}
+	</div>
+	<h2 class="h3">Hybrid assembly (both long and short reads)</h2>
+	<div class="d-md-flex flex-wrap gutter flex-auto">
+	  {% assign apps = collections.genomics %}
+	  {% for app in apps %}{% if 'denovoassembly_hybrid' == app.data.label %}
+	  {% include "genomic" app: app.data %}{% endif %}
+	  {% endfor %}
+	</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container-lg d-flex flex-column justify-content-evenly px-3">
+    <h1 class="h2">Follow-up analysis</h1>
+    <div class="container-lg page-section py-2">
+      <h2 class="h3">Assembly quality control and completeness</h2>
+      <div class="d-md-flex flex-wrap gutter flex-auto">
+	{% assign apps = collections.genomics %}
+	{% for app in apps %}{% if 'busco' == app.data.label %}
+	{% include "genomic" app: app.data %}{% endif %}
+	{% endfor %}
+      </div>
+      
+      <h2 class="h3">Repeat masking</h2>
+      <div class="d-md-flex flex-wrap gutter flex-auto">
+	{% assign apps = collections.genomics %}
+	{% for app in apps %}{% if 'repeatmasker' == app.data.label %}
+	{% include "genomic" app: app.data %}{% endif %}
+	{% endfor %}
+      </div>
+      
+      <h2 class="h3">Annotation</h2>
+      <div class="d-md-flex flex-wrap gutter flex-auto">
+	{% assign apps = collections.genomics %}
+	{% for app in apps %}{% if 'annotation' == app.data.label %}
+	{% include "genomic" app: app.data %}{% endif %}
+	{% endfor %}
+      </div>
+      <h2 class="h3">Visual representations</h2>
+      <p class="f3">
+	circos plot
+      </p>
+      <h2 class="h3">Phylogenetic analysis</h2>
+      <p class="f3">
+	Phylogenetic analysis and comparative genomics
+      </p>    
+    </div>
+  </div>
+</div>

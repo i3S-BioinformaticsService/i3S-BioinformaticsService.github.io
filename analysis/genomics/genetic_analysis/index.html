@@ -1,0 +1,106 @@
+---
+layout: default
+title: Variant analysis
+
+eleventyNavigation:
+  key: Genetic analysis
+  parent: Genomics
+  order: 4
+---
+
+<script> function mouseOver(x) {document.getElementById("legend").innerHTML = x.title;}</script>
+
+<div class="color-bg-tertiary-light">
+  <div class="container-md text-center" >
+    <img
+      alt=""
+      src="/assets/img/geneticAnalysis_v2.png"
+      class="block width-fit"
+      title="Genetic analysis"
+      />
+  </div>
+  
+  <div class="container-lg d-flex flex-column justify-content-evenly py-3 px-3">
+    <style> div {text-align: justify; text-justify: inter-word; } </style> 
+    
+    <h1 class="h2">Genetic analysis</h1>
+    <p class="f3">
+      Population genetic analysis aim to characterization of the genetic history of a given population and/or to identify the loci underlying local adaptations.
+    </p>
+  
+  <h1 class="h2 pt-4">Available analysis</h1>
+  <div class="container-lg pt-4">
+    <div class="page-section d-flex flex-column gutter-md flex-md-row flex-justify-around align-items-center mb-3" >
+      <div class="d-flex flex-column" style="flex-basis:33.33%">
+	<div class="d-flex flex-self-center anim-hover-grow" >
+	  <a href="/analysis/genomics/genetic_analysis/Population_analysis/">
+	    <img
+	      alt=""
+	      src="/assets/img/PopulationAnalysis.png"
+	      onmouseover="mouseOver(this)"
+	      class="block width-fit"
+	      title="Small variant analysis"
+	      />
+	  </a>
+	</div>
+	<div class="page-section d-flex flex-column mt-auto">
+	  <h3 class="h3 text-center mb-auto">Population structure analysis</h3>    
+	</div>
+      </div>
+      
+      <div class="d-flex flex-column col-auto" style="flex-basis:33.33%">
+	<div class="d-flex flex-self-center anim-hover-grow">
+	  <a href="/analysis/genomics/genetic_analysis/Phylogenetic_analysis/">
+	    <img
+	      alt=""
+	      src="/assets/img/PhylogeneticAnlysis.png"
+	      onmouseover="mouseOver(this)"
+	      class="d-block width-fit"
+	      title="Copy-number analysis"
+	      />
+	  </a>
+	</div>
+	
+	<div class="page-section d-flex flex-column mt-auto">
+	  <h3 class="h3 text-center mb-auto">Phylogenetic analysis</h3>    
+	</div>
+      </div>
+    </div>
+    <div class="page-section d-flex flex-column gutter-md flex-md-row flex-justify-around align-items-center mb-3 py-4" >
+      <div class="d-flex flex-column col-auto" style="flex-basis:33.33%">
+	<div class="d-flex flex-self-center anim-hover-grow">
+	  <a href="/analysis/genomics/genetic_analysis/Genomewide_association/">
+	    <img
+	      alt=""
+	      src="/assets/img/GenomeWideAssociation.png"
+	      onmouseover="mouseOver(this)"
+	      class="d-block width-fit"
+	      title="Copy-number analysis"
+	      />
+	  </a>
+	</div>
+	
+	<div class="page-section d-flex flex-column mt-auto">
+	  <h3 class="h3 text-center mb-auto">Genome-wide association analysis</h3>    
+	</div>
+      </div>
+
+      <div class="d-flex flex-column col-auto" style="flex-basis:33.33%">
+	<div class="d-flex flex-self-center anim-hover-grow" >
+	  <a href="/analysis/genomics/genetic_analysis/Polygenic_riskscore/">
+	    <img
+	      alt=""
+	      src="/assets/img/PolygenicRiskScore.png"
+	      onmouseover="mouseOver(this)"
+	      class="d-block width-fit"
+	      title="Structural variant analysis"
+	      />
+	  </a>
+	</div>
+	<div class="page-section d-flex flex-column mt-auto">
+	  <h3 class="h3 text-center mb-auto">Polygenic risk score</h3>
+	</div>
+      </div>
+    </div>
+  </div>
+  </div>
