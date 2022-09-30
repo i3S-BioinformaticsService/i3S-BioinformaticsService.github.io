@@ -54,6 +54,9 @@ module.exports = function (eleventyConfig) {
         strict_filters: true,
         root: ["_includes"]
     };
+
+    const liquid = new Liquid(options);
+    eleventyConfig.setLibrary("liquid", liquid);
  
     // Customize markdown-it settings
     let markdown = markdownIt({
