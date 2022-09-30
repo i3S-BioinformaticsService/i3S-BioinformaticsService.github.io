@@ -1,6 +1,6 @@
 {
-    "name": "i3SBioinformaticsWorkflows",
-    "short_name": "i3SBioInfWrkflows",
+    "name": "i3SBioinformaticsService",
+    "short_name": "i3SBioInfService",
     "icons": [
         {
             "src": "/android-chrome-192x192.png?v=jw3d9vxKo4",
@@ -15,6 +15,6 @@
     ],
     "theme_color": "#66cce0",
     "background_color": "#66cce0",
-    "start_url": "https://i3sbioinformaticsworkflows.github.io/",
+    "start_url": "https://i3s-bioinformaticsservice.github.io/",
     "display": "standalone"
 }
