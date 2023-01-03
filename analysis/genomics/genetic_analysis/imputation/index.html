@@ -1,0 +1,41 @@
+---
+layout: default
+title: Imputation
+---
+
+<script> function mouseOver(x) {document.getElementById("legend").innerHTML = x.title;}</script>
+
+<div class="color-bg-tertiary-light">
+  <div class="container-lg text-center" >
+    <img
+      alt=""
+      src="/assets/img/dnaseq/imputation.small.png"
+      onmouseover="mouseOver(this)"
+      class="block"
+      title="Imputation"
+      style="max-width: 300px;"
+      />
+  </div>
+
+  <div class="container-lg d-flex flex-column justify-content-evenly py-3 px-3">
+    <style> div {text-align: justify; text-justify: inter-word; } </style> 
+    
+    <h1 class="h2">Imputation</h1>
+    <p class="f3">
+      
+    </p>
+
+    </div>
+    <div class="container-lg d-flex flex-column justify-content-evenly px-3 pt-4">
+      <h1 class="h2">Available pipelines</h1>
+      <div class="container-lg page-section py-2">
+	<div class="d-md-flex flex-wrap gutter flex-auto">
+	  {% assign apps = collections.genomics %}
+	  {% for app in apps %}{% if 'imputation' == app.data.label %}
+	  {% include "genomic" app: app.data %}{% endif %}
+	  {% endfor %}
+	</div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -14,9 +14,10 @@ eleventyNavigation:
   <div class="container-lg text-center" >
     <img
       alt=""
-      src="/assets/img/rna_seq_fusion_detection.png"
-      class="block width-fit"
-      title="Variant analysis"
+      src="/assets/img/rnaseq/rna_seq_fusion_detection.png"
+      class="block"
+      title="Fusion gene detection"
+      style="max-width: 300px;"
       />
   </div>
   
@@ -74,14 +75,11 @@ eleventyNavigation:
       <div class="container-lg page-section py-2">
 	<div class="d-md-flex flex-wrap gutter flex-auto">
 	  {% assign apps = collections.genomics %}
-	  {% for app in apps %}{% if 'dna_read_assembly' == app.data.label %}
+	  {% for app in apps %}{% if 'rnaseq_fusion_gene' == app.data.label %}
 	  {% include "genomic" app: app.data %}{% endif %}
 	  {% endfor %}
 	</div>
       </div>
     </div>
-
-  
-    <h1 class="h2 pt-4">Follow-up analysis</h1>
   </div>
 </div>

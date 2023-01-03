@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Copy-number variant analysis
+title: Whole-metagenome
 ---
 
 <script> function mouseOver(x) {document.getElementById("legend").innerHTML = x.title;}</script>
@@ -9,11 +9,10 @@ title: Copy-number variant analysis
   <div class="container-lg text-center" >
     <img
       alt=""
-      src="/assets/img/metagenomesequencing.png"
+      src="/assets/img/dnaseq/metagenomics_analysis.large.png"
       onmouseover="mouseOver(this)"
-      class="block"
-      title="Exploratory analysis"
-      style="max-width: 200px;"
+      class="block width-fit"
+      title="Whole-metagenomics analysis"
       />
   </div>
   
@@ -98,20 +97,9 @@ title: Copy-number variant analysis
       <div class="container-lg page-section py-2">
 	<div class="d-md-flex flex-wrap gutter flex-auto">
 	  {% assign apps = collections.genomics %}
-	  {% for app in apps %}{% if 'metagenomics_16s' == app.data.label %}
+	  {% for app in apps %}{% if 'metagenomics_whole_metagenome' == app.data.label %}
 	  {% include "genomic" app: app.data %}{% endif %}
 	  {% endfor %}
-	</div>
-      </div>
-    </div>
-
-    <div class="container-lg d-flex flex-column justify-content-evenly px-3">
-      <h1 class="h2">Follow-up analysis</h1>
-      <div class="container-lg page-section pt-2">
-	<div class="container-lg d-flex flex-column flex-sm-row flex-sm-justify-between flex-sm-items-center py-3 px-3">
-	  <div class="d-flex flex-self-center" style="flex-basis:30%">
-	    <h3 class="h3 mb-auto">Visual representations</h3>
-	  </div>
 	</div>
       </div>
     </div>

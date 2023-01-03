@@ -14,7 +14,7 @@ eleventyNavigation:
   <div class="container-lg text-center" >
     <img
       alt=""
-      src="/assets/img/rna_seq_differential_expression_analysis.png"
+      src="/assets/img/rnaseq/differential_expression_analysis.large.png"
       class="block width-fit"
       title="Variant analysis"
       />
@@ -83,10 +83,10 @@ eleventyNavigation:
       </div>
     </div>
     
-    <div class="container-lg d-flex flex-column justify-content-evenly px-3 pt-4">
+    <div class="container-lg d-flex flex-column justify-content-evenly pt-4">
       <h1 class="h2">Available pipelines</h1>
-      <h2 class="h3 py-4">Recommended</h2>
-      <div class="container-lg page-section">
+      <h2 class="h3 pt-4">Recommended</h2>
+      <div class="container-lg page-section py-2">
 	<div class="d-md-flex flex-wrap gutter flex-auto">
 	  {% assign apps = collections.transcriptomics %}
 	  {% for app in apps %}{% if 'rnaseq_align_recommended' == app.data.label %}
@@ -95,7 +95,7 @@ eleventyNavigation:
 	</div>
       </div>
 
-      <h2 class="h3">Additional pipelines</h2>
+      <h2 class="h3 pt-2">Additional pipelines</h2>
       <div class="container-lg page-section py-2">
 	<div class="d-md-flex flex-wrap gutter flex-auto">
 	  {% assign apps = collections.transcriptomics %}
@@ -110,15 +110,15 @@ eleventyNavigation:
     <h1 class="h2 pt-4">Follow-up analysis</h1>
     <div class="container-lg page-section py-2">
       <div class="d-md-flex flex-wrap gutter flex-auto">
-	<div class="d-flex flex-column" style="flex-basis:33.33%">
+	<div class="d-flex flex-column box-decoration" style="flex-basis:33.33%">
 	  <div class="d-flex flex-self-center anim-hover-grow" >
 	    <a href="/analysis/transcriptomics/visual_representations/principal_component_analysis/">
 	      <img
 		alt=""
-		src="/assets/img/PCA.png"
+		src="/assets/img/rnaseq/principal_component_analysis.small.png"
 		onmouseover="mouseOver(this)"
 		class="block width-fit"
-		title="Small variant analysis"
+		title="Principal component analysis"
 		/>
 	    </a>
 	  </div>
@@ -127,15 +127,15 @@ eleventyNavigation:
 	  </div>
 	</div>
 	
-	<div class="d-flex flex-column" style="flex-basis:33.33%">
+	<div class="d-flex flex-column box-decoration" style="flex-basis:33.33%">
 	  <div class="d-flex flex-self-center anim-hover-grow">
 	    <a href="/analysis/transcriptomics/visual_representations/heatmap/">
 	      <img
 		alt=""
-		src="/assets/img/Heatmap.png"
+		src="/assets/img/rnaseq/heatmap.small.png"
 		onmouseover="mouseOver(this)"
 		class="d-block width-fit"
-		title="Copy-number analysis"
+		title="Heatmap"
 		/>
 	    </a>
 	  </div>
@@ -145,15 +145,15 @@ eleventyNavigation:
 	  </div>
 	</div>
 
-	<div class="d-flex flex-column" style="flex-basis:33.33%">
+	<div class="d-flex flex-column box-decoration" style="flex-basis:33.33%">
 	  <div class="d-flex flex-self-center anim-hover-grow">
-	    <a href="/analysis/transcriptomics/exploratory_analysis/differentia_expression_analysis/">
+	    <a href="/analysis/transcriptomics/rna_seq_differential_expression_analysis/allelic_expression_analysis/">
 	      <img
 		alt=""
-		src="/assets/img/allelicExpression.png"
+		src="/assets/img/rnaseq/allelic_expression.small.png"
 		onmouseover="mouseOver(this)"
 		class="d-block width-fit"
-		title="Copy-number analysis"
+		title="Allelic expression analysis"
 		/>
 	    </a>
 	  </div>
@@ -163,15 +163,15 @@ eleventyNavigation:
 	  </div>
 	</div>
 	
-	<div class="d-flex flex-column" style="flex-basis:33.33%">
+	<div class="d-flex flex-column box-decoration" style="flex-basis:33.33%">
 	  <div class="d-flex flex-self-center anim-hover-grow">
-	    <a href="/analysis/transcriptomics/exploratory_analysis/differentia_expression_analysis/">
+	    <a href="/analysis/transcriptomics/rna_seq_differential_expression_analysis/differentia_expression_analysis/">
 	      <img
 		alt=""
-		src="/assets/img/DEanalysis.png"
+		src="/assets/img/rnaseq/differential_expression_analysis.small.png"
 		onmouseover="mouseOver(this)"
 		class="d-block width-fit"
-		title="Copy-number analysis"
+		title="Differential expression analysis"
 		/>
 	    </a>
 	  </div>
@@ -181,15 +181,15 @@ eleventyNavigation:
 	  </div>
 	</div>
 	
- 	<div class="d-flex flex-column" style="flex-basis:33.33%">
+ 	<div class="d-flex flex-column box-decoration" style="flex-basis:33.33%">
 	  <div class="d-flex flex-self-center anim-hover-grow" >
 	    <a href="/analysis/transcriptomics/pathway_analysis/">
 	      <img
 		alt=""
-		src="/assets/img/pathwayAnalysis.png"
+		src="/assets/img/rnaseq/pathway_analysis.small.png"
 		onmouseover="mouseOver(this)"
 		class="d-block width-fit"
-		title="Structural variant analysis"
+		title="Pathways analysis"
 		/>
 	    </a>
 	  </div>
@@ -198,15 +198,15 @@ eleventyNavigation:
 	  </div>
 	</div>
 	
-	<div class="d-flex flex-column" style="flex-basis:33.33%">
+	<div class="d-flex flex-column box-decoration" style="flex-basis:33.33%">
 	  <div class="d-flex flex-self-center anim-hover-grow" >
 	    <a href="/analysis/transcriptomics/predictive_modeling/">
 	      <img
 		alt=""
-		src="/assets/img/predictiveModelling.png"
+		src="/assets/img/rnaseq/predictive_modelling.small.png"
 		onmouseover="mouseOver(this)"
 		class="d-block width-fit"
-		title="Structural variant analysis"
+		title="Predictive modeling"
 		/>
 	    </a>
 	  </div>

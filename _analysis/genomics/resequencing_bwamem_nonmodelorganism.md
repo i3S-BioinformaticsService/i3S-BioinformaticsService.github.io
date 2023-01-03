@@ -27,37 +27,32 @@ This pipeline performs the alignment of fastq files, from DNA sequencing reads, 
 * BWA v0.7.17
 * Samtools v1.15.1
 * BioBamBam2 v2.0.87
-* GATK v4.3.6.1
 
 ### Relevant software values (assume default if unspecified)
 * None
 
-### Pipeline
+### Pipeline [&#128279;](https://raw.githubusercontent.com/i3S-BioinformaticsService/i3s-cwl-ngs-workflows/main/DNA-Seq/dna_resequencing_bwa_mem.nonmodel_organism.json)
 
-<div class="container-lg px-3 pt-3">
-  <div class="page-section d-flex flex-column gutter-md flex-md-row align-items-end mb-2" >
-    <div id="vue" style="height: 500px; border: 1px solid gray;">
-      <cwl cwl-url="https://raw.githubusercontent.com/i3S-BioinformaticsService/i3s-cwl-ngs-workflows/main/DNA-Seq/dna_resequencing_bwa_mem.nonmodel_organism.json">
-      </cwl>
-    </div>
-    <script src="/assets/js/vue.min.js"></script>
-    <script src="/assets/js/cwl_svg.js"></script>
-    <script src="/assets/js/tua-bsl.umd.min.js"></script>
-    <script>
-      new Vue({
-          el: '#vue',
-          components: {
-              cwl: vueCwl.default
-          }
-      });
-        var $ = document.querySelector.bind(document)
-        $('#vue').onmouseover = function () {bodyScrollLock.lock('#vue')}
-        $('#vue').onmouseout = function() { bodyScrollLock.unlock('#vue')}
-    </script>
-  </div>
+<div id="vue" style="height: 500px; ">
+  <cwl cwl-url="https://raw.githubusercontent.com/i3S-BioinformaticsService/i3s-cwl-ngs-workflows/main/DNA-Seq/dna_resequencing_bwa_mem.nonmodel_organism.json">
+  </cwl>
 </div>
+<script src="/assets/js/vue.min.js"></script>
+<script src="/assets/js/cwl_svg.js"></script>
+<script src="/assets/js/tua-bsl.umd.min.js"></script>
+<script>
+  new Vue({
+           el: '#vue',
+           components: {
+             cwl: vueCwl.default
+          }
+ });
+  var $ = document.querySelector.bind(document)
+      $('#vue').onmouseover = function () {bodyScrollLock.lock('#vue')}
+      $('#vue').onmouseout = function() { bodyScrollLock.unlock('#vue')}
+</script>
 
 
 ### Methods (Please adapt)
-Mapping to reference genome (assembly version XXX) was performed using BWA mem (version 0.7.17) and duplicates were removed using biobambam2 (version 2.0.87) followed by base quality recalibration using GATK (version 4.3.6.1).
+Mapping to reference genome (assembly version XXX) was performed using BWA mem (version 0.7.17) and duplicates were removed using biobambam2 (version 2.0.87).
 
